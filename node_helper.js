@@ -7,7 +7,7 @@ const phoneFormatter = require("phone-formatter");
 const xml2js = require("xml2js");
 const moment = require('moment');
 const exec = require('child_process').exec;
-const PythonShell = require('python-shell');
+const {PythonShell} = require('python-shell');
 const path = require("path");
 
 const CALL_TYPE = Object.freeze({
@@ -208,6 +208,7 @@ module.exports = NodeHelper.create({
 		}
 
 		var options = {
+			pythonPath: 'python',
 			mode: 'json',
 			scriptPath: path.resolve(__dirname),
 			args: args
