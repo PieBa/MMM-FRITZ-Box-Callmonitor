@@ -147,7 +147,7 @@ module.exports = NodeHelper.create({
 					if (type == CALL_TYPE.INCOMING && self.config.deviceFilter && self.config.deviceFilter.indexOf(call.Device[0]) > -1) {
 						continue;
 					}
-					var callInfo = {"time": moment(call.Date[0], "DD.MM.YY HH:mm"), "caller": self.getName(call.Caller[0])};
+					var callInfo = {"time": moment(call.Date[0], "DD.MM.YY HH:mm"), "caller": self.getName(call.Caller[0]), "type": type};
 					if (call.Name[0])
 					{
 						callInfo.caller = call.Name[0];
